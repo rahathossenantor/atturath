@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Raleway:wght@400;500;600;700&family=Titan+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Homepage styles */
+.titan-one {
+    font-family: 'Titan One', sans-serif;
+}
+.patrick-hand {
+    font-family: 'Patrick Hand', cursive;
+}
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
