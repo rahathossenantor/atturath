@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="border text-center">
-            {
-                ["welcome", "teachers", "contact"].map((txt, idx) => 
-                <Link key={idx}><button className="btn mx-2 bg-[#85B719] text-white text-lg uppercase">{txt}</button></Link>)
-            }
+        <div className="text-center open-sans">
+            <NavLink className="px-[25px] py-[19px] rounded-2xl rounded-b-none mx-2 text-[17px] bg-[#85B719] text-white hover:bg-white hover:text-[#85B719] inline-block" to="/">WELCOME</NavLink>
+            <NavLink className="px-[25px] py-[19px] rounded-2xl rounded-b-none mx-2 text-[17px] bg-[#85B719] text-white hover:bg-white hover:text-[#85B719] inline-block" to="/teachers">TEACHERS</NavLink>
+            <NavLink className="px-[25px] py-[19px] rounded-2xl rounded-b-none mx-2 text-[17px] bg-[#85B719] text-white hover:bg-white hover:text-[#85B719] inline-block" to="/contact">CONTACT</NavLink>
         </div>
     );
 };
