@@ -3,7 +3,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const Header = () => {
     return (
-        <div className="flex justify-between mt-5">
+        <div className="flex items-center justify-between mt-5 border">
             <div>
                 <h2 className="text-5xl titan-one">Atturath</h2>
                 <h4 className="text-2xl patrick-hand">Kindergarden</h4>
