@@ -2,9 +2,9 @@
 const About = () => {
     return (
         <div className="bg-white">
-            <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 py-10">
+            <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 py-20">
                 <div className="text-center">
-                    <h4 className="text-4xl patrick-hand">A few things we’re great at</h4>
+                    <h4 className="text-[40px] patrick-hand">A few things we’re great at</h4>
                     <p className="text-lg raleway">Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae. In his nemore temporibus consequuntur, vim ad prima vivendum consetetur.</p>
                 </div>
                 <div className="grid grid-cols-3 gap-5 mt-5 mb-[127px]">
