@@ -32,3 +32,11 @@
 .txt-shadow {
     text-shadow: 2px 2px #85B719;
 }
+.sign-up {
+    background: url("https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/black-1072366_1920-1.jpg") no-repeat center;
+    background-size: cover;
+}
+.dotted-line {
+    border: none;
+    border-top: 3px dotted white;
+}
