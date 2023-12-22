@@ -1,8 +1,8 @@
+import SectionHeader from "../components/SectionHeader";
 
 const Contact = () => {
     return (
-        <div>
-        </div>
+        <SectionHeader title="Contact"></SectionHeader>
     );
 };
 
