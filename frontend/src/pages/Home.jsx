@@ -1,8 +1,8 @@
-import About from "../components/About";
 import Featured from "../components/Featured";
+import About from "../components/About";
 import Features from "../components/Features";
-import Footer from "../components/Footer";
 import SignUpSection from "../components/SignUpSection";
+import Footer from "../components/Footer";
 
 const Home = () => {
     return (
