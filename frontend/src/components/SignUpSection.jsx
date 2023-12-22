@@ -5,7 +5,7 @@ const SignUpSection = () => {
             <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 py-20">
                 <div className="text-white">
                     <h3 className="text-6xl text-center annie">Sign up for our school</h3>
-                    <form className="w-[80%] mx-auto mt-8 patrick-hand">
+                    <form className="xl:w-[80%] lg:w-[85%] md:w-[90%] mx-auto mt-8 patrick-hand">
                         <div className="mb-4">
                             <label htmlFor="name">YOUR NAME (REQUIRED)</label>
                             <input required type="text" id="name" name="name" className="input open-sans bg-transparent w-full" />
