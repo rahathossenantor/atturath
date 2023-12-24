@@ -15,7 +15,7 @@ const Footer = () => {
                         <img src="https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/house.png" alt="image" />
                     </div>
                 </footer>
-                <p className="raleway text-center text-white pb-5">Copyright © 2023 - All rights reserved by Atturath Kindergarden.</p>
+                <p className="raleway text-center text-white py-5">Copyright © 2023 - All rights reserved by Atturath Kindergarden.</p>
             </div>
         </div>
     );
