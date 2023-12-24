@@ -44,3 +44,8 @@
     border: none;
     border-top: 3px dotted white;
 }
+.statistics {
+    background: url("https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/school-tools-3596680_1920-1.jpg") no-repeat center;
+    background-size: cover;
+    background-color: #00000061;
+}
