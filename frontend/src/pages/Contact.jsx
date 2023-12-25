@@ -1,4 +1,5 @@
 import Address from "../components/Address";
+import JoinForm from "../components/JoinForm";
 import SectionHeader from "../components/SectionHeader";
 
 const Contact = () => {
@@ -6,6 +7,7 @@ const Contact = () => {
         <>
             <SectionHeader title="Contact"></SectionHeader>
             <Address></Address>
+            <JoinForm></JoinForm>
         </>
     );
 };
