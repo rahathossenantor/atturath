@@ -6,11 +6,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
 import Teachers from './pages/Teachers.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
