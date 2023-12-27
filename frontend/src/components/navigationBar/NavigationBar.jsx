@@ -20,7 +20,7 @@ const logo =
 
 const NavigationBar = () => {
     return (
-        <div className="bg-white w-full sticky z-10 top-0 border-b">
+        <div className="bg-white w-full sticky z-10 top-0 border">
             <div className="md:container md:mx-auto xl:px-0 lg:px-5 md:px-5 px-5">
                 <div className="navbar p-0 md:justify-between">
                     <div className="navbar-start hidden lg:flex">

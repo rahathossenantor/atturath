@@ -1,5 +1,5 @@
 import Featured from "../components/Featured";
-import About from "../components/About";
+import Services from "../components/Services";
 import Features from "../components/Features";
 import SignUpSection from "../components/SignUpSection";
 
@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <>
             <Featured></Featured>
-            <About></About>
+            <Services></Services>
             <Features></Features>
             <SignUpSection></SignUpSection>
         </>
