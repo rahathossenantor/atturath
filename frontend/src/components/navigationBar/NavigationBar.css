@@ -1,0 +1,9 @@
+@media screen and (max-width: 767px) {
+    /* navbar */
+    .navbar-center {
+        flex-grow: 1;
+    }
+    .dropdown ul {
+        right: 0;
+    }
+}

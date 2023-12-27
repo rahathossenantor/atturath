@@ -2,7 +2,7 @@
 const About = () => {
     return (
         <div className="bg-white">
-            <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 py-20">
+            <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 pb-20 pt-[60px]">
                 <div className="text-center">
                     <h4 className="text-[40px] patrick-hand">A few things we’re great at</h4>
                     <p className="xl:text-xl lg:text-xl md:text-lg text-lg raleway">Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae. In his nemore temporibus consequuntur, vim ad prima vivendum consetetur.</p>
