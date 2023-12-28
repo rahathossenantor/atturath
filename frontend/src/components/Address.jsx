@@ -9,8 +9,8 @@ const Address = () => {
                         <div>
                             <div className="patrick-hand">
                                 <h4 className="text-xl mb-2">LOREM IPSUM SIN</h4>
-                                <h2 className="text-4xl mb-3">Colibri Kindergarten</h2>
-                                <p className="text-lg">(540) 372-4410 3 Melanie Hollow Ln Fredericksburg, Virginia(VA), 22405</p>
+                                <h2 className="text-4xl mb-3">AT-Turath Academy of Quran</h2>
+                                <p className="text-lg">42/3 East Hajipara, Dhaka-1212, Bangladesh.</p>
                             </div>
                             <div className="mt-3">
                                 <img className="inline-block w-14" src={cap} alt="icon" />
@@ -23,7 +23,7 @@ const Address = () => {
                         </div>
                     </div>
                     <div>
-                        <iframe className="xl:w-[700px] lg:w-full md:w-full w-full xl:h-[500px] lg:h-[500px] md:h-[500px] h-[350px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14603.245763333374!2d90.40013466421065!3d23.789727992853017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a0f70deb73%3A0x30c36498f90fe23!2sGulshan%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1703406660254!5m2!1sen!2sbd" allowFullScreen loading="lazy"></iframe>
+                        <iframe className="xl:w-[700px] lg:w-full md:w-full w-full xl:h-[500px] lg:h-[500px] md:h-[500px] h-[350px]" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1825.8578449837034!2d90.4179433!3d23.7575159!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8794ed5f1af%3A0x742fa3f8e9b63f00!2s42%2C%203%20E%20Hazipara%2C%20Dhaka%201219!5e0!3m2!1sen!2sbd!4v1703750877679!5m2!1sen!2sbd" allowFullScreen loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
