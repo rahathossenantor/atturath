@@ -10,7 +10,8 @@
     background-size: cover;
 }
 .active {
-    color: #06A8F0;
+    background-color: #06A8F0 !important;
+    color: white !important;
 }
 
 /* Homepage styles */

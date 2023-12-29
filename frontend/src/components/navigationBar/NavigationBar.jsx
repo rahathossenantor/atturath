@@ -6,7 +6,7 @@ import "./NavigationBar.css";
 const navLinks =
     <>
         <NavLink to="/"><li className="text-lg px-3 hover:text-[#06A8F0]">Home</li></NavLink>
-        <NavLink to="/about"><li className="text-lg px-3 hover:text-[#06A8F0]">About Us</li></NavLink>
+        <NavLink to="/dashboard"><li className="text-lg px-3 hover:text-[#06A8F0]">Dashboard</li></NavLink>
         <NavLink to="/teachers"><li className="text-lg px-3 hover:text-[#06A8F0]">Teachers</li></NavLink>
         <NavLink to="/students"><li className="text-lg px-3 hover:text-[#06A8F0]">Students</li></NavLink>
         <NavLink to="/contact"><li className="text-lg px-3 hover:text-[#06A8F0]">Contact</li></NavLink>

@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className="bg-white raleway">
+        <div className="bg-white raleway border-t">
             <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
                 <footer className="footer py-10 text-base-content">
                     <nav className="gap-[2px]">
@@ -31,7 +31,7 @@ const Footer = () => {
                 </footer>
                 <footer className="footer py-4 border-t text-base-content border-base-300">
                     <aside className="items-center grid-flow-col gap-5">
-                        <a><img src={logo1} className="inline-block w-20" alt="logo" /></a>
+                        <a><img src={logo1} className="inline-block w-[65px]" alt="logo" /></a>
                         <p className="text-base"><span className="font-semibold">AT-Turath Academy of Quran</span><br />—where young minds embrace the wisdom of the Quran!</p>
                     </aside>
                     <nav className="md:place-self-center md:justify-self-end 2xl:grid xl:grid lg:grid md:grid hidden">
