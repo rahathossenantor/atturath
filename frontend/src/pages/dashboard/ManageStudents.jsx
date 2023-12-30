@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../../components/dashboard/PageTitle";
-import Teacher from "../../components/dashboard/Teacher";
+import Student from "../../components/dashboard/Student";
 
-const ManageTeachers = () => {
+const ManageStudents = () => {
     return (
         <>
-            <PageTitle title="Manage Teachers"></PageTitle>
+            <PageTitle title="Manage Students"></PageTitle>
             <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 my-10 raleway">
                 <div className="overflow-x-auto my-5">
                     <table className="table">
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
-                        <Teacher></Teacher>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
+                        <Student></Student>
                     </table>
                 </div>
                 <div className="flex justify-between gap-5">
@@ -26,8 +26,8 @@ const ManageTeachers = () => {
                         <button className="join-item btn btn-outline">Previous page</button>
                         <button className="join-item btn btn-outline">Next</button>
                     </div>
-                    <Link to="/dashboard/add-teacher">
-                        <button className="btn btn-outline">Add Teacher</button>
+                    <Link to="/dashboard/add-student">
+                        <button className="btn btn-outline">Add Student</button>
                     </Link>
                 </div>
             </div>
@@ -35,4 +35,4 @@ const ManageTeachers = () => {
     );
 };
 
-export default ManageTeachers;
+export default ManageStudents;

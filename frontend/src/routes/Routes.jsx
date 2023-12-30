@@ -7,6 +7,7 @@ import App from "../App";
 import Dashboard from "../pages/dashboard/Dashboard";
 import ManageTeachers from "../pages/dashboard/ManageTeachers";
 import DashboardHome from "../pages/dashboard/DashboardHome";
+import ManageStudents from "../pages/dashboard/ManageStudents";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/manage-teachers",
                 element: <ManageTeachers></ManageTeachers>
+            },
+            {
+                path: "/dashboard/manage-students",
+                element: <ManageStudents></ManageStudents>
             }
         ]
     }
