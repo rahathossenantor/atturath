@@ -10,10 +10,10 @@ const Footer = () => {
                 <footer className="footer py-10 text-base-content">
                     <nav className="gap-[2px]">
                         <header className="text-2xl text-black font-medium mb-2">Keep In Touch</header>
-                        <a href="https://maps.app.goo.gl/25wimnNM4E58CzDL7" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><FaLocationDot></FaLocationDot> 42/3 East Hajipara, Dhaka-1212, Bangladesh.</a>
-                        <a href="https://api.whatsapp.com/send/?phone=%2B8801966498505&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><FaPhone></FaPhone> +880 1966-498505</a>
-                        <a href="https://api.whatsapp.com/send/?phone=%2B8801829669921&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><FaPhone></FaPhone> +880 1829-669921</a>
-                        <a href="mailto:atturathacademy@gmail.com" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><MdEmail></MdEmail> atturathacademy@gmail.com</a>
+                        <a href="https://maps.app.goo.gl/25wimnNM4E58CzDL7" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><FaLocationDot></FaLocationDot> <span className="link-hover">42/3 East Hajipara, Dhaka-1212, Bangladesh.</span></a>
+                        <a href="https://api.whatsapp.com/send/?phone=%2B8801966498505&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><FaPhone></FaPhone> <span className="link-hover">+880 1966-498505</span></a>
+                        <a href="https://api.whatsapp.com/send/?phone=%2B8801829669921&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><FaPhone></FaPhone> <span className="link-hover">+880 1829-669921</span></a>
+                        <a href="mailto:atturathacademy@gmail.com" target="_blank" rel="noreferrer" className="text-lg flex gap-2 items-center"><MdEmail></MdEmail> <span className="link-hover">atturathacademy@gmail.com</span></a>
                     </nav>
                     <nav className="gap-[2px]">
                         <header className="text-2xl text-black font-medium mb-2">Useful Links</header>
@@ -31,7 +31,7 @@ const Footer = () => {
                 </footer>
                 <footer className="footer py-4 border-t text-base-content border-base-300">
                     <aside className="items-center grid-flow-col gap-5">
-                        <a><img src={logo1} className="inline-block w-[65px]" alt="logo" /></a>
+                        <a><img src={logo1} className="inline-block w-[65px]" alt="logo"/></a>
                         <p className="text-base"><span className="font-semibold">AT-Turath Academy of Quran</span><br />—where young minds embrace the wisdom of the Quran!</p>
                     </aside>
                     <nav className="md:place-self-center md:justify-self-end 2xl:grid xl:grid lg:grid md:grid hidden">

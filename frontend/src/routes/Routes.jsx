@@ -5,6 +5,8 @@ import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import App from "../App";
 import Dashboard from "../pages/dashboard/Dashboard";
+import ManageTeachers from "../pages/dashboard/ManageTeachers";
+import DashboardHome from "../pages/dashboard/DashboardHome";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +30,17 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: "/dashboard",
+                element: <DashboardHome></DashboardHome>
+            },
+            {
+                path: "/dashboard/manage-teachers",
+                element: <ManageTeachers></ManageTeachers>
+            }
+        ]
     }
 ]);
 
