@@ -25,7 +25,7 @@ const Features = () => {
                         </div>
                     </div>
                     <div className="xl:w-1/2 w-full">
-                        <img className="inline-block rounded-[30px]" src="https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/cropped-child-1864718_1280-1-1.jpg" alt="image" />
+                        <img className="inline-block rounded-[20px]" src="https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/cropped-child-1864718_1280-1-1.jpg" alt="image" />
                     </div>
                 </div>
             </div>

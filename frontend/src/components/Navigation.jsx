@@ -17,8 +17,8 @@ const Navigation = ({ navLinks, mainContent }) => {
                                 </label>
                             </div>
                             <div className="flex gap-2">
-                                <img src={logo1} alt="logo" className="w-16" />
-                                <img src={logo2} alt="logo" className="w-24" />
+                                <a href="/"><img src={logo1} alt="logo" className="w-16" /></a>
+                                <a href="/"><img src={logo2} alt="logo" className="w-24" /></a>
                             </div>
                             <div className="flex-none hidden lg:block">
                                 <ul className="menu menu-horizontal p-0 raleway">

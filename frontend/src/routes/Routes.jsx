@@ -1,14 +1,15 @@
+import ManageTeachers from "../pages/dashboard/ManageTeachers";
+import ManageStudents from "../pages/dashboard/ManageStudents";
+import DashboardHome from "../pages/dashboard/DashboardHome";
 import { createBrowserRouter } from "react-router-dom";
-import NotFound from "../pages/NotFound";
+import AddStudent from "../pages/dashboard/AddStudent";
+import AddTeacher from "../pages/dashboard/AddTeacher";
+import Dashboard from "../pages/dashboard/Dashboard";
 import Teachers from "../pages/Teachers";
+import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import App from "../App";
-import Dashboard from "../pages/dashboard/Dashboard";
-import ManageTeachers from "../pages/dashboard/ManageTeachers";
-import DashboardHome from "../pages/dashboard/DashboardHome";
-import ManageStudents from "../pages/dashboard/ManageStudents";
-import AddStudent from "../pages/dashboard/AddStudent";
 
 const router = createBrowserRouter([
     {
@@ -39,16 +40,20 @@ const router = createBrowserRouter([
                 element: <DashboardHome></DashboardHome>
             },
             {
-                path: "/dashboard/manage-teachers",
-                element: <ManageTeachers></ManageTeachers>
+                path: "/dashboard/add-student",
+                element: <AddStudent></AddStudent>
+            },
+            {
+                path: "/dashboard/add-teacher",
+                element: <AddTeacher></AddTeacher>
             },
             {
                 path: "/dashboard/manage-students",
                 element: <ManageStudents></ManageStudents>
             },
             {
-                path: "/dashboard/add-student",
-                element: <AddStudent></AddStudent>
+                path: "/dashboard/manage-teachers",
+                element: <ManageTeachers></ManageTeachers>
             }
         ]
     }

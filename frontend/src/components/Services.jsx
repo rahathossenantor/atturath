@@ -39,7 +39,7 @@ const Services = () => {
                             <div key={service.id} className="border shadow-xl rounded-2xl">
                                 <figure className="w-full">
                                     <div className="flex items-center justify-center p-5 pb-0 xl:h-[300px] lg:h-[300px] md:h-[220px] h-[230px]">
-                                        <img className="inline-block w-full h-full rounded-xl rounded-b-none" src={service.imageUrl} alt="image" />
+                                        <img className="inline-block w-full h-full rounded-xl rounded-b-none object-cover" src={service.imageUrl} alt="image" />
                                     </div>
                                 </figure>
                                 <div className="p-5 text-center">
