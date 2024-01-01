@@ -9,8 +9,8 @@ const DashboardHome = () => {
                 <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 gap-5 raleway">
                     <Link to="/dashboard/add-student"><button className="w-full py-5 rounded-xl text-[19px] font-semibold text-white bg-red-500">Admit New Student</button></Link>
                     <Link to="/dashboard/add-teacher"><button className="w-full py-5 rounded-xl text-[19px] font-semibold text-white bg-green-500">Add New Teacher</button></Link>
-                    <Link to="/dashboard/add-course"><button className="w-full py-5 rounded-xl text-[19px] font-semibold text-white bg-yellow-500">Add New Course</button></Link>
-                    <Link to="/"><button className="w-full py-5 rounded-xl text-[19px] font-semibold text-white bg-blue-500">Go To Home</button></Link>
+                    <Link to="/dashboard/manage-students"><button className="w-full py-5 rounded-xl text-[19px] font-semibold text-white bg-yellow-500">Manage Students</button></Link>
+                    <Link to="/dashboard/manage-teachers"><button className="w-full py-5 rounded-xl text-[19px] font-semibold text-white bg-blue-500">Manage Teachers</button></Link>
                 </div>
             </div>
         </>

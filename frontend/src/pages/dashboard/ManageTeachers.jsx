@@ -23,7 +23,7 @@ const ManageTeachers = () => {
                 </div>
                 <div className="flex justify-between gap-5">
                     <div className="join grid grid-cols-2">
-                        <button className="join-item btn btn-outline">Previous page</button>
+                        <button className="join-item btn btn-outline">Previous</button>
                         <button className="join-item btn btn-outline">Next</button>
                     </div>
                     <Link to="/dashboard/add-teacher">

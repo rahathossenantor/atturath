@@ -3,7 +3,7 @@ const Features = () => {
     return (
         <div className="bg-[#A2DAF5]">
             <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 py-20">
-                <div className="border bg-white xl:p-8 lg:p-8 md:p-6 p-4 flex xl:flex-row lg:flex-col-reverse md:flex-col-reverse flex-col-reverse items-center gap-5 xl:rounded-[60px] lg:rounded-[60px] md:rounded-[40px] rounded-[30px]">
+                <div className="border bg-white p-5 flex xl:flex-row lg:flex-col-reverse md:flex-col-reverse flex-col-reverse items-center gap-5 rounded-[30px]">
                     <div className="xl:w-1/2 w-full">
                         <div className="mb-5">
                             <div>
@@ -25,7 +25,7 @@ const Features = () => {
                         </div>
                     </div>
                     <div className="xl:w-1/2 w-full">
-                        <img className="inline-block rounded-[40px]" src="https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/cropped-child-1864718_1280-1-1.jpg" alt="image" />
+                        <img className="inline-block rounded-[30px]" src="https://colibriwp-work.colibriwp.com/school-ii/wp-content/uploads/2019/02/cropped-child-1864718_1280-1-1.jpg" alt="image" />
                     </div>
                 </div>
             </div>

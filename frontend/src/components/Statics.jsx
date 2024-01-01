@@ -25,14 +25,14 @@ const Statics = () => {
                     <div className="flex flex-col items-center text-center">
                         <h5 className="text-2xl mb-2">happy teachers</h5>
                         <div className="flex items-center gap-3">
-                            <img className="inline-block w-12" src={degree} alt="icon" />
+                            <img className="inline-block w-14" src={degree} alt="icon" />
                             <h4 className="text-4xl">100</h4>
                         </div>
                     </div>
                     <div className="flex flex-col items-center text-center">
                         <h5 className="text-2xl mb-2">happy hours</h5>
                         <div className="flex items-center gap-3">
-                            <img className="inline-block w-12" src={love} alt="icon" />
+                            <img className="inline-block w-[40px]" src={love} alt="icon" />
                             <h4 className="text-4xl">100</h4>
                         </div>
                     </div>

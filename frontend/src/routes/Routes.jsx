@@ -8,6 +8,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import ManageTeachers from "../pages/dashboard/ManageTeachers";
 import DashboardHome from "../pages/dashboard/DashboardHome";
 import ManageStudents from "../pages/dashboard/ManageStudents";
+import AddStudent from "../pages/dashboard/AddStudent";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/manage-students",
                 element: <ManageStudents></ManageStudents>
+            },
+            {
+                path: "/dashboard/add-student",
+                element: <AddStudent></AddStudent>
             }
         ]
     }

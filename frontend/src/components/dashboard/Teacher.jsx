@@ -25,7 +25,7 @@ const Teacher = () => {
                     <h5 className="text-lg">emailaddress@gmail.com</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <h5 className="text-lg">Dhaka, Bangladesh <img className="inline-block w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/125px-Flag_of_Bangladesh.svg.png" alt="country" /></h5>
+                    <h5 className="text-lg">Dhaka, Bangladesh</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
                     <button className="btn text-base py-[9px] px-7">Update</button>
