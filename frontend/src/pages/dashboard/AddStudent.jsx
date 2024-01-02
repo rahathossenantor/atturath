@@ -1,10 +1,65 @@
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+
+const imgApiKey = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const imgApi = `https://api.imgbb.com/1/upload?key=${imgApiKey}`;
 
 const AddStudent = () => {
-    const { register, handleSubmit, formState: { errors }, } = useForm();
+    const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        // get image from user and post it to the imagebb server for direct url
+        const imageFile = { image: data.photo[0] };
+        const res = await axiosPublic.post(imgApi, imageFile, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
+
+        if (res.data.success) {
+            const student = {
+                name: data.name,
+                email: data.email,
+                level: data.class,
+                subject: data.subject,
+                address: data.address,
+                image: res.data.data.display_url
+            };
+
+            // send the menu item to the server
+            const studentRes = await axiosSecure.post("/students", student);
+            if (studentRes.data.insertedId) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Student admitted!",
+                    icon: "success",
+                    confirmButtonText: "Close",
+                    timer: 1500
+                });
+                reset();
+            } else {
+                Swal.fire({
+                    title: "Failed!",
+                    text: "Failed!",
+                    icon: "error",
+                    confirmButtonText: "Close",
+                    timer: 1500
+                });
+            }
+        } else {
+            Swal.fire({
+                title: "Failed!",
+                text: "Image upload failed!",
+                icon: "error",
+                confirmButtonText: "Close",
+                timer: 1500
+            });
+        }
     };
 
     return (

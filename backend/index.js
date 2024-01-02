@@ -35,6 +35,20 @@ const run = async () => {
         const studentsCollection = client.db("schoolDB").collection("students");
         const teachersCollection = client.db("schoolDB").collection("teachers");
 
+        // students APIs
+        // post new student
+        app.post("/students", async (req, res) => {
+            const student = req.body;
+            const status = await studentsCollection.insertOne(student);
+            res.send(status);
+        });
+
+        // get all students data
+        app.get("/students", async (req, res) => {
+            const students = await studentsCollection.find().toArray();
+            res.send(students);
+        });
+
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");

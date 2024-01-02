@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../../components/dashboard/PageTitle";
 import TableData from "../../components/dashboard/TableData";
+import useStudentsData from "../../hooks/useStudentsData";
 
 const students = [
     {
@@ -51,6 +52,9 @@ const students = [
 ];
 
 const ManageStudents = () => {
+    const { data } = useStudentsData();
+    console.log(data);
+
     const handleDelete = (_id) => {
         console.log(_id);
     };
