@@ -66,7 +66,7 @@ const AddStudent = () => {
                         <input {...register("photo", { required: true })} type="file" name="photo" id="photo" className="file-input file-input-bordered w-full" />
                         {errors.photo && <span className="text-red-600 mt-1 inline-block">Image is required</span>}
                     </div>
-                    <input type="submit" value="Admit Student" className="btn btn-block normal-case text-lg" />
+                    <input type="submit" value="Admit Student" className="btn btn-block btn-outline normal-case text-lg" />
                 </form>
             </div>
         </div>

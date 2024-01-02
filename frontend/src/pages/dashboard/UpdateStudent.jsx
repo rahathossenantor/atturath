@@ -65,7 +65,7 @@ const UpdateStudent = () => {
                         <label htmlFor="photo" className="font-semibold text-lg">Student&apos;s Image:</label>
                         <input {...register("photo")} type="file" name="photo" id="photo" className="file-input file-input-bordered w-full" />
                     </div>
-                    <input type="submit" value="Update Student" className="btn btn-block normal-case text-lg" />
+                    <input type="submit" value="Update Student" className="btn btn-block btn-outline normal-case text-lg" />
                 </form>
             </div>
         </div>
