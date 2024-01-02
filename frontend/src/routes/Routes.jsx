@@ -10,6 +10,8 @@ import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import App from "../App";
+import UpdateTeacher from "../pages/dashboard/UpdateTeacher";
+import UpdateStudent from "../pages/dashboard/UpdateStudent";
 
 const router = createBrowserRouter([
     {
@@ -40,20 +42,28 @@ const router = createBrowserRouter([
                 element: <DashboardHome></DashboardHome>
             },
             {
-                path: "/dashboard/add-student",
-                element: <AddStudent></AddStudent>
-            },
-            {
                 path: "/dashboard/add-teacher",
                 element: <AddTeacher></AddTeacher>
             },
             {
-                path: "/dashboard/manage-students",
-                element: <ManageStudents></ManageStudents>
+                path: "/dashboard/add-student",
+                element: <AddStudent></AddStudent>
+            },
+            {
+                path: "/dashboard/update-teacher/:id",
+                element: <UpdateTeacher></UpdateTeacher>
+            },
+            {
+                path: "/dashboard/update-student/:id",
+                element: <UpdateStudent></UpdateStudent>
             },
             {
                 path: "/dashboard/manage-teachers",
                 element: <ManageTeachers></ManageTeachers>
+            },
+            {
+                path: "/dashboard/manage-students",
+                element: <ManageStudents></ManageStudents>
             }
         ]
     }

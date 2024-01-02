@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-const AddStudent = () => {
+const UpdateStudent = () => {
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
     const onSubmit = async (data) => {
@@ -11,7 +11,7 @@ const AddStudent = () => {
         <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5">
             <div className="border shadow-xl 2xl:p-20 xl:p-20 lg:p-10 md:p-10 p-5 my-10 rounded-md raleway">
                 <div className="text-center">
-                    <h2 className="text-4xl font-semibold mb-4">Add <span className="text-[#FD8E3C]">Student</span></h2>
+                    <h2 className="text-4xl font-semibold mb-4">Update <span className="text-[#FD8E3C]">Student</span></h2>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* first row */}
@@ -62,15 +62,14 @@ const AddStudent = () => {
                     </div>
                     {/* fourth row */}
                     <div className="mb-3">
-                        <label htmlFor="photo" className="font-semibold text-lg">Student&apos;s Image: <span className="text-red-600">*</span></label>
-                        <input {...register("photo", { required: true })} type="file" name="photo" id="photo" className="file-input file-input-bordered w-full" />
-                        {errors.photo && <span className="text-red-600 mt-1 inline-block">Image is required</span>}
+                        <label htmlFor="photo" className="font-semibold text-lg">Student&apos;s Image:</label>
+                        <input {...register("photo")} type="file" name="photo" id="photo" className="file-input file-input-bordered w-full" />
                     </div>
-                    <input type="submit" value="Admit Student" className="btn btn-block normal-case text-lg" />
+                    <input type="submit" value="Update Student" className="btn btn-block normal-case text-lg" />
                 </form>
             </div>
         </div>
     );
 };
 
-export default AddStudent;
+export default UpdateStudent;

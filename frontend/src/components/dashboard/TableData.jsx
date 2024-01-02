@@ -1,8 +1,9 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit3 } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Teacher = () => {
+const TableData = ({ tableData, path, deletorFn }) => {
     return (
         <tbody>
             <tr className="flex flex-col xl:flex-row justify-between border">
@@ -10,35 +11,35 @@ const Teacher = () => {
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
                             <div className="w-24 rounded border">
-                                <img src="https://cdn3d.iconscout.com/3d/premium/thumb/muslim-businessman-avatar-10233732-8264139.png?f=webp" alt="image" />
+                                <img src={tableData.image} alt="avatar" />
                             </div>
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold">Muhammad Abdullah</h3>
+                            <h3 className="text-xl font-bold">{tableData.name}</h3>
                         </div>
                     </div>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <h5 className="text-lg">Senior Teacher</h5>
+                    <h5 className="text-lg">{tableData.level}</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <h5 className="text-lg">Arabic</h5>
+                    <h5 className="text-lg">{tableData.subject}</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <h5 className="text-lg">emailaddress@gmail.com</h5>
+                    <h5 className="text-lg">{tableData.email}</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <h5 className="text-lg">Dhaka, Bangladesh</h5>
+                    <h5 className="text-lg">{tableData.address}</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <Link className="xl:mx-3" to={`/dashboard/update-student/`}>
+                    <Link className="xl:mx-3" to={`/dashboard/update-${path}/${tableData._id}`}>
                         <button className="p-[10px] bg-green-500 rounded-sm">
                             <FiEdit3 className="text-xl text-white"></FiEdit3>
                         </button>
                     </Link>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
-                    <button className="p-[10px] xl:mr-3 bg-red-500 rounded-sm">
+                    <button onClick={() => deletorFn(tableData._id)} className="p-[10px] xl:mr-3 bg-red-500 rounded-sm">
                         <RiDeleteBin6Line className="text-xl text-white"></RiDeleteBin6Line>
                     </button>
                 </td>
@@ -47,4 +48,10 @@ const Teacher = () => {
     );
 };
 
-export default Teacher;
+TableData.propTypes = {
+    tableData: PropTypes.object.isRequired,
+    path: PropTypes.string.isRequired,
+    deletorFn: PropTypes.func.isRequired
+};
+
+export default TableData;

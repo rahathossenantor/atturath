@@ -17,12 +17,12 @@ const AddTeacher = () => {
                     {/* first row */}
                     <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col flex-col gap-3 mb-3">
                         <div className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-full w-full">
-                            <label htmlFor="name" className="font-semibold text-lg">Teacher&apos;s Name:</label>
+                            <label htmlFor="name" className="font-semibold text-lg">Teacher&apos;s Name: <span className="text-red-600">*</span></label>
                             <input {...register("name", { required: true })} type="text" placeholder="Student's name" id="name" name="name" className="input input-bordered w-full" />
                             {errors.name && <span className="text-red-600 mt-1 inline-block">Name is required</span>}
                         </div>
                         <div className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-full w-full">
-                            <label htmlFor="email" className="font-semibold text-lg">Teacher&apos;s Email:</label>
+                            <label htmlFor="email" className="font-semibold text-lg">Teacher&apos;s Email: <span className="text-red-600">*</span></label>
                             <input {...register("email", { required: true })} type="email" placeholder="Student's email" id="email" name="email" className="input input-bordered w-full" />
                             {errors.email && <span className="text-red-600 mt-1 inline-block">Email is required</span>}
                         </div>
@@ -30,7 +30,7 @@ const AddTeacher = () => {
                     {/* second row */}
                     <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col flex-col gap-3 mb-3">
                         <div className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-full w-full">
-                            <label htmlFor="position" className="font-semibold text-lg">Select Position:</label>
+                            <label htmlFor="position" className="font-semibold text-lg">Select Position: <span className="text-red-600">*</span></label>
                             <select {...register("position", { required: true })} id="position" name="position" className="input input-bordered w-full">
                                 <option value="" hidden >Select position</option>
                                 <option value="Senior Teacher">Senior</option>
@@ -40,7 +40,7 @@ const AddTeacher = () => {
                             {errors.position && <span className="text-red-600 mt-1 inline-block">Class is required</span>}
                         </div>
                         <div className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-full w-full">
-                            <label htmlFor="subject" className="font-semibold text-lg">Select Subject:</label>
+                            <label htmlFor="subject" className="font-semibold text-lg">Select Subject: <span className="text-red-600">*</span></label>
                             <select {...register("subject", { required: true })} id="subject" name="subject" className="input input-bordered w-full">
                                 <option value="" hidden >Select subject</option>
                                 <option value="Quran">Quran</option>
@@ -53,13 +53,13 @@ const AddTeacher = () => {
                     </div>
                     {/* third row */}
                     <div className="mb-3">
-                        <label htmlFor="address" className="font-semibold text-lg">Address:</label>
+                        <label htmlFor="address" className="font-semibold text-lg">Address: <span className="text-red-600">*</span></label>
                         <input {...register("address", { required: true })} type="text" placeholder="Teachers's address" id="address" name="address" className="input input-bordered w-full" />
                         {errors.address && <span className="text-red-600 mt-1 inline-block">Address is required</span>}
                     </div>
                     {/* fourth row */}
                     <div className="mb-3">
-                        <label htmlFor="photo" className="font-semibold text-lg">Teacher&apos;s Image:</label>
+                        <label htmlFor="photo" className="font-semibold text-lg">Teacher&apos;s Image: <span className="text-red-600">*</span></label>
                         <input {...register("photo", { required: true })} type="file" name="photo" id="photo" className="file-input file-input-bordered w-full" />
                         {errors.photo && <span className="text-red-600 mt-1 inline-block">Image is required</span>}
                     </div>
