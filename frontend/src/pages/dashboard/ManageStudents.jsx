@@ -1,13 +1,46 @@
+import Swal from "sweetalert2";
 import PageTitle from "../../components/dashboard/PageTitle";
 import TableData from "../../components/dashboard/TableData";
 import useStudentsData from "../../hooks/useStudentsData";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ManageStudents = () => {
-    const { data: students } = useStudentsData();
+    const { data: students, refetch } = useStudentsData();
+    const axiosSecure = useAxiosSecure();
 
     const handleDelete = (_id) => {
-        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/students/${_id}`)
+                    .then(res => {
+                        if (res.data?.deletedCount) {
+                            refetch();
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: `Student has been deleted.`,
+                                icon: "success",
+                                timer: 1500
+                            });
+                        } else {
+                            Swal.fire({
+                                title: "Failed!",
+                                text: `Something went wrong!`,
+                                icon: "error",
+                                timer: 1500
+                            });
+                        }
+                    })
+            }
+        });
     };
 
     return (
@@ -17,7 +50,7 @@ const ManageStudents = () => {
                 <div className="overflow-x-auto my-5">
                     <table className="table">
                         {
-                            students.map(student => <TableData key={student._id} tableData={student} path="student" deletorFn={handleDelete}></TableData>)
+                            students.length != 0 && students.slice(0, 5).map(student => <TableData key={student._id} tableData={student} path="student" deletorFn={handleDelete}></TableData>)
                         }
                     </table>
                 </div>

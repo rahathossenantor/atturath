@@ -1,4 +1,4 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -47,6 +47,14 @@ const run = async () => {
         app.get("/students", async (req, res) => {
             const students = await studentsCollection.find().toArray();
             res.send(students);
+        });
+
+        // delete students
+        app.delete("/students/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const status = await studentsCollection.deleteOne(query);
+            res.send(status);
         });
 
         // Send a ping to confirm a successful connection
