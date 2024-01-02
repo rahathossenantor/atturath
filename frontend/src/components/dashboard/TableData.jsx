@@ -19,16 +19,16 @@ const TableData = ({ tableData, path, deletorFn }) => {
                         </div>
                     </div>
                 </td>
-                <td className="flex items-center justify-start p-[10px]">
+                <td className="flex items-center justify-start p-[10px] xl:w-[170px]">
                     <h5 className="text-lg">{tableData.level}</h5>
                 </td>
-                <td className="flex items-center justify-start p-[10px]">
+                <td className="flex items-center justify-start p-[10px] xl:w-[110px]">
                     <h5 className="text-lg">{tableData.subject}</h5>
                 </td>
-                <td className="flex items-center justify-start p-[10px]">
+                <td className="flex items-center justify-start p-[10px] xl:w-[300px] xl:overflow-x-scroll">
                     <h5 className="text-lg">{tableData.email}</h5>
                 </td>
-                <td className="flex items-center justify-start p-[10px]">
+                <td className="flex items-center justify-start p-[10px] xl:w-[200px] xl:overflow-x-scroll">
                     <h5 className="text-lg">{tableData.address}</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">
