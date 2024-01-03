@@ -1,12 +1,12 @@
-import Swal from "sweetalert2";
 import PageTitle from "../../components/dashboard/PageTitle";
 import TableData from "../../components/dashboard/TableData";
-import useStudentsData from "../../hooks/useStudentsData";
-import { Link } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useData from "../../hooks/useData";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ManageStudents = () => {
-    const { data: students, refetch } = useStudentsData();
+    const { data: students, refetch } = useData("students");
     const axiosSecure = useAxiosSecure();
 
     const handleDelete = (_id) => {

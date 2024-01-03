@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import PageTitle from "../../components/dashboard/PageTitle";
 import TableData from "../../components/dashboard/TableData";
-import useTeachersData from "../../hooks/useTeachersData";
+import useData from "../../hooks/useData";
+import { Link } from "react-router-dom";
 
 const ManageTeachers = () => {
-    const { data: teachers } = useTeachersData();
+    const { data: teachers } = useData("teachers");
 
     const handleDelete = (_id) => {
         console.log(_id);

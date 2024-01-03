@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
-const useStudentsData = () => {
+const useData = (url) => {
     const axiosPublic = useAxiosPublic();
 
     const { data = [], isPending: loading, refetch } = useQuery({
-        queryKey: ["students"],
+        queryKey: [url],
         queryFn: async () => {
-            const res = await axiosPublic.get("/students");
+            const res = await axiosPublic.get(`/${url}`);
             return res.data;
         }
     });
@@ -15,4 +15,4 @@ const useStudentsData = () => {
     return { data, loading, refetch };
 };
 
-export default useStudentsData;
+export default useData;
