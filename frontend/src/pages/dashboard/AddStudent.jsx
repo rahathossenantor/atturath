@@ -39,7 +39,7 @@ const AddStudent = () => {
                     text: "Student admitted!",
                     icon: "success",
                     confirmButtonText: "Close",
-                    timer: 1500
+                    timer: 2000
                 });
                 reset();
             } else {
@@ -48,7 +48,7 @@ const AddStudent = () => {
                     text: "Something went wrong!",
                     icon: "error",
                     confirmButtonText: "Close",
-                    timer: 1500
+                    timer: 2000
                 });
             }
         } else {
@@ -57,7 +57,7 @@ const AddStudent = () => {
                 text: "Image upload failed!",
                 icon: "error",
                 confirmButtonText: "Close",
-                timer: 1500
+                timer: 2000
             });
         }
     };

@@ -1,13 +1,46 @@
+import Swal from "sweetalert2";
 import PageTitle from "../../components/dashboard/PageTitle";
 import TableData from "../../components/dashboard/TableData";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useData from "../../hooks/useData";
 import { Link } from "react-router-dom";
 
 const ManageTeachers = () => {
-    const { data: teachers } = useData("teachers");
+    const { data: teachers, refetch } = useData("teachers");
+    const axiosSecure = useAxiosSecure();
 
     const handleDelete = (_id) => {
-        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/teachers/${_id}`)
+                    .then(res => {
+                        if (res.data?.deletedCount) {
+                            refetch();
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: `Teacher has been deleted.`,
+                                icon: "success",
+                                timer: 2000
+                            });
+                        } else {
+                            Swal.fire({
+                                title: "Failed!",
+                                text: `Something went wrong!`,
+                                icon: "error",
+                                timer: 2000
+                            });
+                        }
+                    })
+            }
+        });
     };
 
     return (

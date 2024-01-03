@@ -28,14 +28,14 @@ const ManageStudents = () => {
                                 title: "Deleted!",
                                 text: `Student has been deleted.`,
                                 icon: "success",
-                                timer: 1500
+                                timer: 2000
                             });
                         } else {
                             Swal.fire({
                                 title: "Failed!",
                                 text: `Something went wrong!`,
                                 icon: "error",
-                                timer: 1500
+                                timer: 2000
                             });
                         }
                     })

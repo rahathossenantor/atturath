@@ -44,7 +44,7 @@ const UpdateStudent = () => {
                         text: "Student data updated!",
                         icon: "success",
                         confirmButtonText: "Close",
-                        timer: 1500
+                        timer: 2000
                     });
                 } else {
                     Swal.fire({
@@ -52,7 +52,7 @@ const UpdateStudent = () => {
                         text: "Something went wrong!",
                         icon: "error",
                         confirmButtonText: "Close",
-                        timer: 1500
+                        timer: 2000
                     });
                 }
             } else {
@@ -61,7 +61,7 @@ const UpdateStudent = () => {
                     text: "Something went wrong!",
                     icon: "error",
                     confirmButtonText: "Close",
-                    timer: 1500
+                    timer: 2000
                 });
             }
         } else {
@@ -73,7 +73,7 @@ const UpdateStudent = () => {
                     text: "Student data updated!",
                     icon: "success",
                     confirmButtonText: "Close",
-                    timer: 1500
+                    timer: 2000
                 });
             } else {
                 Swal.fire({
@@ -81,7 +81,7 @@ const UpdateStudent = () => {
                     text: "Something went wrong!",
                     icon: "error",
                     confirmButtonText: "Close",
-                    timer: 1500
+                    timer: 2000
                 });
             }
         }

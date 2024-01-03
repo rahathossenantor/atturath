@@ -77,6 +77,14 @@ const run = async () => {
             res.send(status);
         });
 
+        // delete single teacher
+        app.delete("/teachers/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const status = await teachersCollection.deleteOne(query);
+            res.send(status);
+        });
+
 
         // students APIs
         // post new student
