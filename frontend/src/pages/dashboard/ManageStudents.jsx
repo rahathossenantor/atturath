@@ -50,7 +50,14 @@ const ManageStudents = () => {
                 <div className="overflow-x-auto my-5">
                     <table className="table">
                         {
-                            students.length != 0 && students.slice(0, 5).map(student => <TableData key={student._id} tableData={student} path="student" deletorFn={handleDelete}></TableData>)
+                            students.length != 0 &&
+                            students.slice(0, 5).map(student =>
+                                <TableData
+                                    key={student._id}
+                                    tableData={student}
+                                    path="student"
+                                    deletorFn={handleDelete}>
+                                </TableData>)
                         }
                     </table>
                 </div>

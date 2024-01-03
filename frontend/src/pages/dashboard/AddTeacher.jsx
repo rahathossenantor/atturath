@@ -1,10 +1,65 @@
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
+
+const imgApiKey = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const imgApi = `https://api.imgbb.com/1/upload?key=${imgApiKey}`;
 
 const AddTeacher = () => {
-    const { register, handleSubmit, formState: { errors }, } = useForm();
+    const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        // get image from user and post it to the imagebb server for direct url
+        const imageFile = { image: data.photo[0] };
+        const res = await axiosPublic.post(imgApi, imageFile, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
+
+        if (res.data.success) {
+            const teacher = {
+                name: data.name,
+                email: data.email,
+                level: data.position,
+                subject: data.subject,
+                address: data.address,
+                image: res.data.data.display_url
+            };
+
+            // send teacher's data to the server
+            const teacherRes = await axiosSecure.post("/teachers", teacher);
+            if (teacherRes.data.insertedId) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Teacher added!",
+                    icon: "success",
+                    confirmButtonText: "Close",
+                    timer: 2000
+                });
+                reset();
+            } else {
+                Swal.fire({
+                    title: "Failed!",
+                    text: "Something went wrong!",
+                    icon: "error",
+                    confirmButtonText: "Close",
+                    timer: 2000
+                });
+            }
+        } else {
+            Swal.fire({
+                title: "Failed!",
+                text: "Image upload failed!",
+                icon: "error",
+                confirmButtonText: "Close",
+                timer: 2000
+            });
+        }
     };
 
     return (
@@ -18,12 +73,12 @@ const AddTeacher = () => {
                     <div className="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-col flex-col gap-3 mb-3">
                         <div className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-full w-full">
                             <label htmlFor="name" className="font-semibold text-lg">Teacher&apos;s Name: <span className="text-red-600">*</span></label>
-                            <input {...register("name", { required: true })} type="text" placeholder="Student's name" id="name" name="name" className="input input-bordered w-full" />
+                            <input {...register("name", { required: true })} type="text" placeholder="Teacher's name" id="name" name="name" className="input input-bordered w-full" />
                             {errors.name && <span className="text-red-600 mt-1 inline-block">Name is required</span>}
                         </div>
                         <div className="2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-full w-full">
                             <label htmlFor="email" className="font-semibold text-lg">Teacher&apos;s Email: <span className="text-red-600">*</span></label>
-                            <input {...register("email", { required: true })} type="email" placeholder="Student's email" id="email" name="email" className="input input-bordered w-full" />
+                            <input {...register("email", { required: true })} type="email" placeholder="Teacher's email" id="email" name="email" className="input input-bordered w-full" />
                             {errors.email && <span className="text-red-600 mt-1 inline-block">Email is required</span>}
                         </div>
                     </div>

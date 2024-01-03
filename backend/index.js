@@ -35,6 +35,21 @@ const run = async () => {
         const studentsCollection = client.db("schoolDB").collection("students");
         const teachersCollection = client.db("schoolDB").collection("teachers");
 
+        // teachers APIs
+        // post new teacher
+        app.post("/teachers", async (req, res) => {
+            const teacher = req.body;
+            const status = await teachersCollection.insertOne(teacher);
+            res.send(status);
+        });
+
+        // get all teachers data
+        app.get("/teachers", async (req, res) => {
+            const teachers = await teachersCollection.find().toArray();
+            res.send(teachers);
+        });
+
+
         // students APIs
         // post new student
         app.post("/students", async (req, res) => {
@@ -49,7 +64,7 @@ const run = async () => {
             res.send(students);
         });
 
-        // get single student
+        // get single student data
         app.get("/students/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
@@ -57,7 +72,7 @@ const run = async () => {
             res.send(status);
         });
 
-        // update single single student
+        // update single student data
         app.patch("/students/:id", async (req, res) => {
             const id = req.params.id;
             const student = req.body;
@@ -76,7 +91,7 @@ const run = async () => {
             res.send(status);
         });
 
-        // delete students
+        // delete single student
         app.delete("/students/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };

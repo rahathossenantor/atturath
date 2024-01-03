@@ -31,7 +31,7 @@ const AddStudent = () => {
                 image: res.data.data.display_url
             };
 
-            // send the menu item to the server
+            // send student's data to the server
             const studentRes = await axiosSecure.post("/students", student);
             if (studentRes.data.insertedId) {
                 Swal.fire({
@@ -45,7 +45,7 @@ const AddStudent = () => {
             } else {
                 Swal.fire({
                     title: "Failed!",
-                    text: "Failed!",
+                    text: "Something went wrong!",
                     icon: "error",
                     confirmButtonText: "Close",
                     timer: 1500
