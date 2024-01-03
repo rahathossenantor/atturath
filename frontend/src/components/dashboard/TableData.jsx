@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const TableData = ({ tableData, path, deletorFn }) => {
+    const emailOverflow = (tableData?.email.length > 25)
+        ? "xl:overflow-x-scroll" : ""
+
+    const addressOverflow = (tableData?.address.length > 25)
+        ? "xl:overflow-x-scroll" : ""
+
     return (
         <tbody>
             <tr className="flex flex-col xl:flex-row justify-between border">
@@ -25,10 +31,10 @@ const TableData = ({ tableData, path, deletorFn }) => {
                 <td className="flex items-center justify-start p-[10px] xl:w-[110px]">
                     <h5 className="text-lg">{tableData.subject}</h5>
                 </td>
-                <td className="flex items-center justify-start p-[10px] xl:w-[300px] xl:overflow-x-scroll">
+                <td className={`flex items-center justify-start p-[10px] xl:w-[300px] ${emailOverflow}`}>
                     <h5 className="text-lg">{tableData.email}</h5>
                 </td>
-                <td className="flex items-center justify-start p-[10px] xl:w-[200px] xl:overflow-x-scroll">
+                <td className={`flex items-center justify-start p-[10px] xl:w-[200px] ${addressOverflow}`}>
                     <h5 className="text-lg">{tableData.address}</h5>
                 </td>
                 <td className="flex items-center justify-start p-[10px]">

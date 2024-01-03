@@ -49,6 +49,34 @@ const run = async () => {
             res.send(teachers);
         });
 
+        // get single teacher's data
+        app.get("/teachers/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const status = await teachersCollection.findOne(query);
+            res.send(status);
+        });
+
+        // update single teacher data
+        app.patch("/teachers/:id", async (req, res) => {
+            const id = req.params.id;
+            const teacher = req.body;
+            
+            const query = { _id: new ObjectId(id) };
+            const updatedTeacher = {
+                $set: {
+                    name: teacher.name,
+                    email: teacher.email,
+                    level: teacher.level,
+                    subject: teacher.subject,
+                    address: teacher.address,
+                    image: teacher.image
+                }
+            };
+            const status = await teachersCollection.updateOne(query, updatedTeacher);
+            res.send(status);
+        });
+
 
         // students APIs
         // post new student
@@ -64,7 +92,7 @@ const run = async () => {
             res.send(students);
         });
 
-        // get single student data
+        // get single student's data
         app.get("/students/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };

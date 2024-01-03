@@ -1,6 +1,8 @@
 import ManageTeachers from "../pages/dashboard/ManageTeachers";
 import ManageStudents from "../pages/dashboard/ManageStudents";
 import DashboardHome from "../pages/dashboard/DashboardHome";
+import UpdateTeacher from "../pages/dashboard/UpdateTeacher";
+import UpdateStudent from "../pages/dashboard/UpdateStudent";
 import { createBrowserRouter } from "react-router-dom";
 import AddStudent from "../pages/dashboard/AddStudent";
 import AddTeacher from "../pages/dashboard/AddTeacher";
@@ -10,8 +12,9 @@ import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import App from "../App";
-import UpdateTeacher from "../pages/dashboard/UpdateTeacher";
-import UpdateStudent from "../pages/dashboard/UpdateStudent";
+
+// const baseUrl = "https://atturath.vercel.app";
+const baseUrl = "http://localhost:5000";
 
 const router = createBrowserRouter([
     {
@@ -51,13 +54,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "/dashboard/update-teacher/:id",
-                element: <UpdateTeacher></UpdateTeacher>
+                element: <UpdateTeacher></UpdateTeacher>,
+                loader: ({ params }) => fetch(`${baseUrl}/teachers/${params.id}`)
             },
             {
                 path: "/dashboard/update-student/:id",
                 element: <UpdateStudent></UpdateStudent>,
-                // loader: ({ params }) => fetch(`https://atturath.vercel.app/students/${params.id}`)
-                loader: ({ params }) => fetch(`http://localhost:5000/students/${params.id}`)
+                loader: ({ params }) => fetch(`${baseUrl}/students/${params.id}`)
             },
             {
                 path: "/dashboard/manage-teachers",
