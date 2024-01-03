@@ -49,6 +49,33 @@ const run = async () => {
             res.send(students);
         });
 
+        // get single student
+        app.get("/students/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const status = await studentsCollection.findOne(query);
+            res.send(status);
+        });
+
+        // update single single student
+        app.patch("/students/:id", async (req, res) => {
+            const id = req.params.id;
+            const student = req.body;
+            const query = { _id: new ObjectId(id) };
+            const updatedStudent = {
+                $set: {
+                    name: student.name,
+                    email: student.email,
+                    level: student.level,
+                    subject: student.subject,
+                    address: student.address,
+                    image: student.image
+                }
+            };
+            const status = await studentsCollection.updateOne(query, updatedStudent);
+            res.send(status);
+        });
+
         // delete students
         app.delete("/students/:id", async (req, res) => {
             const id = req.params.id;

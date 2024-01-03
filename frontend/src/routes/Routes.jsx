@@ -55,7 +55,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/dashboard/update-student/:id",
-                element: <UpdateStudent></UpdateStudent>
+                element: <UpdateStudent></UpdateStudent>,
+                loader: ({ params }) => fetch(`https://atturath.vercel.app/students/${params.id}`)
+                // loader: ({ params }) => fetch(`http://localhost:5000/students/${params.id}`)
             },
             {
                 path: "/dashboard/manage-teachers",

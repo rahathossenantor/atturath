@@ -88,12 +88,12 @@ const AddStudent = () => {
                             <label htmlFor="class" className="font-semibold text-lg">Select Class: <span className="text-red-600">*</span></label>
                             <select {...register("class", { required: true })} id="class" name="class" className="input input-bordered w-full">
                                 <option value="" hidden >Select class</option>
-                                <option value="Class I">I</option>
-                                <option value="Class II">II</option>
-                                <option value="Class III">III</option>
-                                <option value="Class IV">IV</option>
-                                <option value="Class V">V</option>
-                                <option value="Class VI">VI</option>
+                                <option value="Class: I">I</option>
+                                <option value="Class: II">II</option>
+                                <option value="Class: III">III</option>
+                                <option value="Class: IV">IV</option>
+                                <option value="Class: V">V</option>
+                                <option value="Class: VI">VI</option>
                             </select>
                             {errors.class && <span className="text-red-600 mt-1 inline-block">Class is required</span>}
                         </div>
