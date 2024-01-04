@@ -1,12 +1,14 @@
 import PageTitle from "../../components/dashboard/PageTitle";
 import TableData from "../../components/dashboard/TableData";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import NoDataFound from "../../components/NoDataFound";
+import Loader from "../../components/Loader";
 import useData from "../../hooks/useData";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ManageStudents = () => {
-    const { data: students, refetch } = useData("students");
+    const { data: students, loading, refetch } = useData("students");
     const axiosSecure = useAxiosSecure();
 
     const handleDelete = (_id) => {
@@ -47,7 +49,7 @@ const ManageStudents = () => {
         <>
             <PageTitle title="Manage Students"></PageTitle>
             <div className="md:container md:mx-auto 2xl:px-0 xl:px-0 lg:px-5 md:px-5 px-5 my-10 raleway">
-                <div className="overflow-x-auto my-5">
+                <div className="overflow-x-auto">
                     <table className="table">
                         {
                             students.length != 0 &&
@@ -60,8 +62,10 @@ const ManageStudents = () => {
                                 </TableData>)
                         }
                     </table>
+                    {loading && <Loader />}
+                    {(!students.length && !loading) && <NoDataFound />}
                 </div>
-                <div className="flex justify-between gap-5">
+                <div className="flex justify-between gap-5 mt-10">
                     {
                         (students.length > 5) ?
                             <div className="join grid grid-cols-2">
