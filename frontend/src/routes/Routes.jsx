@@ -13,6 +13,7 @@ import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import App from "../App";
 import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 // const baseUrl = "https://atturath.vercel.app";
 const baseUrl = "http://localhost:5000";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
             }
         ]
     },
