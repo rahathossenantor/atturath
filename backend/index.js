@@ -32,8 +32,18 @@ const run = async () => {
         // await client.connect();
 
         // collections
+        const usersCollection = client.db("schoolDB").collection("users");
         const studentsCollection = client.db("schoolDB").collection("students");
         const teachersCollection = client.db("schoolDB").collection("teachers");
+
+        // user's APIs
+        // register new user
+        app.post("/users", async (req, res) => {
+            const user = req.body;
+            const status = await usersCollection.insertOne(user);
+            res.send(status);
+        });
+        
 
         // teachers APIs
         // post new teacher
