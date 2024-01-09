@@ -14,6 +14,7 @@ import Home from "../pages/Home";
 import App from "../App";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import PrivateRoute from "./PrivateRoute";
 
 const baseUrl = "https://atturath.vercel.app";
 // const baseUrl = "http://localhost:5000";
@@ -48,37 +49,37 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard/></PrivateRoute>,
         children: [
             {
                 path: "/dashboard",
-                element: <DashboardHome></DashboardHome>
+                element: <PrivateRoute><DashboardHome/></PrivateRoute>
             },
             {
                 path: "/dashboard/add-teacher",
-                element: <AddTeacher></AddTeacher>
+                element: <AddTeacher/>
             },
             {
                 path: "/dashboard/add-student",
-                element: <AddStudent></AddStudent>
+                element: <AddStudent/>
             },
             {
                 path: "/dashboard/update-teacher/:id",
-                element: <UpdateTeacher></UpdateTeacher>,
+                element: <UpdateTeacher/>,
                 loader: ({ params }) => fetch(`${baseUrl}/teachers/${params.id}`)
             },
             {
                 path: "/dashboard/update-student/:id",
-                element: <UpdateStudent></UpdateStudent>,
+                element: <UpdateStudent/>,
                 loader: ({ params }) => fetch(`${baseUrl}/students/${params.id}`)
             },
             {
                 path: "/dashboard/manage-teachers",
-                element: <ManageTeachers></ManageTeachers>
+                element: <ManageTeachers/>
             },
             {
                 path: "/dashboard/manage-students",
-                element: <ManageStudents></ManageStudents>
+                element: <ManageStudents/>
             }
         ]
     }

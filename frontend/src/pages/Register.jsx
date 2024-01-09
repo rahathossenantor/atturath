@@ -123,8 +123,8 @@ const Register = () => {
                                         </div>
                                         {/* END Divider: With Label */}
                                         <div className="grid grid-cols-2 gap-2">
-                                            <a href="" className="btn flex gap-1"><FaGoogle className="text-lg" /> Google</a>
-                                            <a href="" className="btn flex gap-1"><FaFacebook className="text-lg" /> Facebook</a>
+                                            <a className="btn flex gap-1"><FaGoogle className="text-lg" /> Google</a>
+                                            <a className="btn flex gap-1"><FaFacebook className="text-lg" /> Facebook</a>
                                         </div>
                                     </div>
                                 </form>
