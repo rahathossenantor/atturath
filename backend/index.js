@@ -159,3 +159,6 @@ run().catch(console.dir);
 app.listen(port, () => {
     console.log(`Server started at ${port} port`);
 });
+
+// DB_USERNAME=atturathacademy
+// DB_PASS=adKel2AW2o44tcjH
